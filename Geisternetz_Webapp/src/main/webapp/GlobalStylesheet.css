@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.logo{
+    width: 150px;
+    margin-left: 30px;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #374140;
+}
+.navbar a{
+    text-decoration: none;
+    font-size: x-large;
+    font-family: Avenir;
+    color: #d9cb9e;
+    padding: 40px;
+}
+.navbar a:hover{
+    color: #dc3522;
+}
+.startseite{
+    margin-left: 30px;
+}
+.formular {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+    width: 50%;
+    margin: 3% auto 10%;
+}
+.button{
+    width: 30%;
+}
+.unterseitenText{
+    display: flex;
+    width: 30%;
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Avenir;
+    text-align: center;
+    color: #dc3522;
+    background-color: rgba(42, 44, 43, 95%); /* halbtransparenter Hintergrund */
+    border-radius: 10px;
+}
+.startseiteText{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    font-family: Avenir;
+    text-align: center;
+    color: #d9cb9e;
+    background-color: rgba(42, 44, 43, 95%); /* halbtransparenter Hintergrund */
+    border-radius: 10px;
+}
+.flexwrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+}
+h2{
+    font-weight: bold;
+    color: #dc3522;
+    margin-top: 5%;
+}
+.ausgabeformular{
+    margin: 4%;
+}
+a.button-style {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f36c3a;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+a.button-style:hover {
+    background-color: #e85f2e;
+}
+.meldungen{
+    color: #f36c3a;
+    font-size: 5vw;
+    text-align: center;
+    font-family: "Avenir Black";
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    .navbar a {
+        padding: 10px 0;
+        font-size: large;
+        width: 100%;
+    }
+    .startseite {
+        margin-left: 0;
+    }
+    .logo {
+        margin: 0 auto 10px auto;
+        width: 120px;
+    }
+}

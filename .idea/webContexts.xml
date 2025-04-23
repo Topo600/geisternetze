@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/Geisternetz_Webapp/src/main/webapp/NeuesNetzMelden.xhtml" value="file://$PROJECT_DIR$/Geisternetz_Webapp/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/lektion6/src/main/webapp/editPerson.xhtml" value="file://$PROJECT_DIR$/lektion6/src/main/webapp" />
+      </map>
+    </option>
+  </component>
+</project>

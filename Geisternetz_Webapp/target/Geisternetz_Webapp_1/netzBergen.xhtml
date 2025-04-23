@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="GlobalStylesheet.css" />
+</h:head>
+<h:body>
+    <div class="navbar">
+        <h:graphicImage library="img" name="Logo1.png" alt="Mein Bild" styleClass="logo"/>
+        <a href="index.xhtml" class="startseite">Startseite</a>
+        <a href="neuesNetzMelden.xhtml">Meldeseite</a>
+        <a href="ausgabe.xhtml">Netze Übersicht</a>
+    </div>
+    <div class="unterseitenText">
+        <h1>Trag dich ein um ein Netz zu bergen</h1>
+        <p>Du brauchst dafür eine Benutzer ID und die <br> ID des Netzes dass du bergen möchtest.</br>
+            Du hast noch keine Benutzer ID ? Dann kannst du <a href="neuerBenutzer.xhtml" style="text-decoration: none; color: #d9cb9e"><b>HIER</b></a> eine anlegen.<br>
+            Du kennst die ID des Netzes nicht dass du bergen möchtest ?</br>
+            Dann lies sie <a href="ausgabe.xhtml" style="text-decoration: none; color: #d9cb9e"><b>HIER</b></a> nach.</p>
+    </div>
+    <div class="card">
+        <h:form styleClass="formular">
+            <p:outputLabel value="Benutzer ID" for="id" />
+            <p:inputText id="id" value="#{statusController.personId}" required="true"/>
+
+            <p:outputLabel for="netzId" value="Netz ID" />
+            <p:inputText id="netzId" value="#{statusController.netzId}" required="true" />
+            <p:message for="netzId" />
+
+            <!-- Button zum Absenden der Bergungsanfrage -->
+            <p:commandButton style="border-style: none; background-color: #dc3522; color: white" value="Netz als Bergend eintragen" action="#{statusController.netzWirdGeborgen()}" update="message" />
+            <p:commandButton style="border-style: none; background-color: #374140; color: white" type="reset" value="Reset" action="#{statusController.reset()}" update="@form" />
+            <!-- Bereich für Erfolgsmeldungen oder Fehlermeldungen -->
+            <p:messages id="message" globalOnly="true" />
+        </h:form>
+    </div>
+</h:body>
+</html>

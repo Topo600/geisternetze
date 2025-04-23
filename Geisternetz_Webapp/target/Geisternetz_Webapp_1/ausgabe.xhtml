@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="GlobalStylesheet.css" />
+</h:head>
+<body>
+    <div class="navbar">
+        <h:graphicImage library="img" name="Logo1.png" alt="Mein Bild" styleClass="logo"/>
+        <a href="index.xhtml" class="startseite">Startseite</a>
+        <a href="neuesNetzMelden.xhtml">Meldeseite</a>
+        <a href="ausgabe.xhtml">Netze Übersicht</a>
+    </div>
+    <div class="ausgabeformular">
+    <h:form>
+        <!-- Dropdown für Filter nach Status -->
+        <p:selectBooleanCheckbox value="#{ausgabeController.filterStatus1}" label="Nur Status 1 anzeigen" />
+
+        <!-- Button, um den Filter zu aktivieren, filterstatus1 wird auf true gesetzt -->
+        <p:commandButton style="border-style: none; background-color: #2a2c2b " value="Filtern nach Status 1" update="geisternetzeTable" actionListener="#{ausgabeController.setFilterStatus1(true)}" />
+
+        <!-- Button, um den Filter zurückzusetzen und wieder nach Status 0 oder 1 zu filtern -->
+        <p:commandButton style="border-style: none; background-color: #2a2c2b " value="Zurücksetzen" update="geisternetzeTable" actionListener="#{ausgabeController.setFilterStatus1(false)}" />
+
+        <!-- Tabelle zur Anzeige der Geisternetze -->
+        <p:dataTable id="geisternetzeTable" value="#{ausgabeController.zuBergendeNetze}" var="netz" styleClass="ui-table-striped">
+            <p:column headerText="ID">
+                <h:outputText value="#{netz.id}" />
+            </p:column>
+
+            <p:column headerText="Breitengrad">
+                <h:outputText value="#{netz.bgrad}" />
+            </p:column>
+
+            <p:column headerText="Längengrad">
+                <h:outputText value="#{netz.lgrad}" />
+            </p:column>
+
+            <p:column headerText="Durchmesser">
+                <h:outputText value="#{netz.flaeche}" />
+            </p:column>
+
+            <p:column headerText="Status">
+                <h:outputText value="#{netz.status}" />
+            </p:column>
+
+            <p:column headerText="Meldend">
+                <h:outputText value="#{netz.meldendePerson.vorname}" />
+            </p:column>
+
+            <p:column headerText="Telefonnr.">
+                <h:outputText value="#{netz.meldendePerson.telefonnummer}" />
+            </p:column>
+
+            <p:column headerText="Bergend">
+                <h:outputText value="#{netz.bergendePerson.vorname}" />
+            </p:column>
+
+            <p:column headerText="Telefonnr.">
+                <h:outputText value="#{netz.bergendePerson.telefonnummer}" />
+            </p:column>
+
+            <p:column styleClass="netzbergenbutton">
+                <!--Button, um das Netz als geborgen zu markieren-->
+                <a href="netzBergen.xhtml" class="button-style">Ich berge</a>
+            </p:column>
+            <p:column>
+                <!--Button, um das Netz als geborgen zu markieren-->
+                <a href="netzGeborgen.xhtml" class="button-style" style="background-color: #374140;" >Netz geborgen</a>
+            </p:column>
+        </p:dataTable>
+    </h:form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <link rel="stylesheet" type="text/css" href="GlobalStylesheet.css" />
+</h:head>
+<body>
+    <div class="navbar">
+        <h:graphicImage library="img" name="Logo1.png" alt="Mein Bild" styleClass="logo"/>
+        <a href="index.xhtml" class="startseite">Startseite</a>
+        <a href="neuesNetzMelden.xhtml">Meldeseite</a>
+        <a href="ausgabe.xhtml">Netze Übersicht</a>
+    </div>
+    <div class="unterseitenText">
+        <h1>Benutzer ID erstellen</h1>
+        <p>Hier kannst du die eine Benutzer ID erstellen. Gib deinen Namen und deine
+            Telefonnummer an. wenn deine Daten erfolgreich gespeichert wurden bekommst du deine ID angezeigt.
+            Merke dir deine ID um Netze zu melden oder bergen.</p>
+    </div>
+    <div class="card">
+        <h:form styleClass="formular">
+            <p:outputLabel value="Vorname" for="vorname" />
+            <p:inputText id="vorname" value="#{neuesNetzMeldenController.vorname}" required="true" />
+
+            <p:outputLabel value="Nachname" for="nachname" />
+            <p:inputText id="nachname" value="#{neuesNetzMeldenController.nachname}" required="true" />
+
+            <p:outputLabel value="Telefonnummer" for="telefonnummer" />
+            <p:inputText id="telefonnummer" value="#{neuesNetzMeldenController.telefonnummer}" required="true" />
+            <!-- Sicherstellen, dass die Methode für den Button korrekt ist -->
+            <p:commandButton style="margin-right: auto; margin-left: auto; border-style: none; background-color: #dc3522; color: white" value="Speichern" class="button" action="#{neuesNetzMeldenController.neuerBenutzer()}" update="messages"/>
+            <p:commandButton style="margin-right: auto; margin-left: auto; border-style: none; background-color: #374140; color: white" type="reset" value="Reset" styleClass="button" action="#{statusController.reset()}" update="@form" />
+            <p:messages id="messages" showDetail="true" closable="true" />
+        </h:form>
+    </div>
+</body>
+</html>
