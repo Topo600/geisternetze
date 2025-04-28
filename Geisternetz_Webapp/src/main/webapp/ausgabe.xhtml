@@ -17,9 +17,6 @@
     </div>
     <div class="ausgabeformular">
     <h:form>
-        <!-- Dropdown für Filter nach Status -->
-        <p:selectBooleanCheckbox value="#{ausgabeController.filterStatus1}" label="Nur Status 1 anzeigen" />
-
         <!-- Button, um den Filter zu aktivieren, filterstatus1 wird auf true gesetzt -->
         <p:commandButton style="border-style: none; background-color: #2a2c2b " value="Filtern nach Status 1" update="geisternetzeTable" actionListener="#{ausgabeController.setFilterStatus1(true)}" />
 

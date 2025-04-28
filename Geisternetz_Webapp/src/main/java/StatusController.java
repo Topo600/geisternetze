@@ -134,7 +134,6 @@ public class StatusController implements Serializable {
             if (transaction.isActive()) {
                 transaction.rollback();
             }
-            e.printStackTrace();
         } finally {
             entityManager.close();
             reset();
